@@ -1,0 +1,34 @@
+{
+  "name": "react-pixi",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "0x.js": "^4.0.1",
+    "@inlet/react-pixi": "0.1.4",
+    "@types/pixi.js": "4.8.0",
+    "@types/react-redux": "6.0.7",
+    "animated": "0.2.2",
+    "antd": "3.9.2",
+    "nem-sdk": "1.6.7",
+    "pixi.js": "4.8.2",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-redux": "5.0.7",
+    "react-scripts-ts": "2.17.0",
+    "redux": "4.0.0"
+  },
+  "scripts": {
+    "ganache-cli": "ganache-cli --noVMErrorsOnRPCResponse --gasLimit 10000000 -p 8545 --networkId 50 -m \"concert load couple harbor equip island argue ramp clarify fence smart topic\"",
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.9.4",
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "typescript": "^3.0.3"
+  }
+}

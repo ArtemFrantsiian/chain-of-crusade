@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "HolyChainFont";
+  src: local("HolyChainFont"), url("./assets/11763.ttf") format("truetype");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: HolyChainFont, sans-serif;
+}
