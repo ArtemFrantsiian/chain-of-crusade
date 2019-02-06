@@ -55,7 +55,7 @@ import {
     attack,
     openModal,
 } from "../actions";
-import { createLink } from './../functions/saver';
+import { createLink } from '../functions/saver';
 import * as types from "../types";
 import { createAndSendTransaction } from "../chain";
 

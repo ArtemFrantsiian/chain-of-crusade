@@ -18,7 +18,7 @@
     "redux": "4.0.0"
   },
   "scripts": {
-    "ganache-cli": "ganache-cli --noVMErrorsOnRPCResponse --gasLimit 10000000 -p 8545 --networkId 50 -m \"concert load couple harbor equip island argue ramp clarify fence smart topic\"",
+    "ganache-cli": "ganache-cli -q --noVMErrorsOnRPCResponse --gasLimit 10000000 --db 0x_ganache_snapshot -p 8545 --networkId 50 -m \"concert load couple harbor equip island argue ramp clarify fence smart topic\"",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",

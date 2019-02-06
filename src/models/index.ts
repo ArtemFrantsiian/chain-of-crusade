@@ -1,3 +1,5 @@
+import { BigNumber } from "0x.js"
+
 export interface ISize {
     full: string;
     min: string;
@@ -11,6 +13,7 @@ export enum ECardLabel {
 
 export interface ICard {
     id: number | string;
+    erc721id: BigNumber;
     image: ISize;
     name: ITranslate;
     description: ITranslate;

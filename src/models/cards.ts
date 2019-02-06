@@ -1,3 +1,5 @@
+import { generatePseudoRandomSalt } from "0x.js";
+
 import * as taoteFull from '../assets/cards/big/image/4.png';
 import * as taoteMin from '../assets/cards/min/image/4.png';
 import * as necessarySacrificeFull from '../assets/cards/big/image/15.png';
@@ -39,6 +41,7 @@ import {ECardLabel} from "./index";
 
 export const taote = {
     id: "taote",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: taoteFull,
         min: taoteMin,
@@ -60,6 +63,7 @@ export const taote = {
 
 export const necessarySacrifice = {
     id: "necessarySacrifice",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: necessarySacrificeFull,
         min: necessarySacrificeMin,
@@ -79,6 +83,7 @@ export const necessarySacrifice = {
 
 export const weakness = {
     id: "weakness",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: weaknessFull,
         min: weaknessMin,
@@ -98,6 +103,7 @@ export const weakness = {
 
 export const ronin = {
     id: "ronin",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: roninFull,
         min: roninMin,
@@ -119,6 +125,7 @@ export const ronin = {
 
 export const herbalRemedies = {
     id: "herbalRemedies",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: herbalRemediesFull,
         min: herbalRemediesMin,
@@ -138,6 +145,7 @@ export const herbalRemedies = {
 
 export const boomSound = {
     id: "boomSound",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: boomSoundFull,
         min: boomSoundMin,
@@ -156,6 +164,7 @@ export const boomSound = {
 };
 export const peddler = {
     id: "peddler",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: peddlerFull,
         min: peddlerMin,
@@ -178,6 +187,7 @@ export const peddler = {
 
 export const raiseFromTheDead = {
     id: "raiseFromTheDead",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: raiseFromTheDeadFull,
         min: raiseFromTheDeadMin,
@@ -197,6 +207,7 @@ export const raiseFromTheDead = {
 
 export const theEnemyOfFaith = {
     id: "theEnemyOfFaith",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: theEnemyOfFaithFull,
         min: theEnemyOfFaithMin,
@@ -218,6 +229,7 @@ export const theEnemyOfFaith = {
 
 export const apostate = {
     id: "apostate",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: apostateFull,
         min: apostateMin,
@@ -239,6 +251,7 @@ export const apostate = {
 
 export const yamabusi = {
     id: "yamabusi",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: yamabusiFull,
         min: yamabusiMin,
@@ -260,6 +273,7 @@ export const yamabusi = {
 
 export const yerisiarh = {
     id: "yerisiarh",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: yerisiarhFull,
         min: yerisiarhMin,
@@ -281,6 +295,7 @@ export const yerisiarh = {
 
 export const mistress = {
     id: "mistress",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: mistressFull,
         min: mistressMin,
@@ -302,6 +317,7 @@ export const mistress = {
 
 export const wrathOfHeaven = {
     id: "wrathOfHeaven",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: wrathOfHeavenFull,
         min: wrathOfHeavenMin,
@@ -321,6 +337,7 @@ export const wrathOfHeaven = {
 
 export const instructorLesson = {
     id: "instructorLesson",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: instructorLessonFull,
         min: instructorLessonMin,
@@ -340,6 +357,7 @@ export const instructorLesson = {
 
 export const guanDi = {
     id: "guanDi",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: guanDiFull,
         min: guanDiMin,
@@ -361,6 +379,7 @@ export const guanDi = {
 
 export const refinement = {
     id: "refinement",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: refinementFull,
         min: refinementMin,
@@ -380,6 +399,7 @@ export const refinement = {
 
 export const kumiho = {
     id: "kumiho",
+    erc721id: generatePseudoRandomSalt(),
     image: {
         full: kumihoFull,
         min: kumihoMin,
