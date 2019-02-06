@@ -12,6 +12,8 @@ import Effect from "./components/Effect";
 import Attack from "./components/Attack";
 import Modal from "./components/Modal";
 import Arrow from "./components/Arrow";
+import { BuyButton } from './components/BuyButton'
+import BuyModal from './components/BuyModal'
 
 const OPTIONS = {
     antialias: false
@@ -25,13 +27,17 @@ export interface IAppProps {
 export interface IAppState {
     width: number;
     height: number;
+    cardBought: boolean;
     wasFirstStep: boolean;
+    showModal: boolean;
 }
 
 class App extends React.Component<IAppProps, IAppState> {
     public state = {
         width: document.documentElement.clientWidth,
         height: document.documentElement.clientHeight,
+        cardBought: false,
+        showModal: false,
         wasFirstStep: false,
     };
 
@@ -43,12 +49,27 @@ class App extends React.Component<IAppProps, IAppState> {
     };
 
     private _doFirstStep = () => {
-        if (!this.state.wasFirstStep) {
+        if (!this.state.wasFirstStep && this.state.cardBought) {
             this.setState({
                 wasFirstStep: true,
             });
         }
     };
+
+    private _buyCards = () => {
+        if (!this.state.cardBought) {
+            this.setState({
+                showModal: true
+            })
+        }
+    }
+
+    private _cardsBought = () => {
+        this.setState({
+            showModal: false,
+            cardBought: true
+        })
+    }
 
     public componentDidMount() {
         window.addEventListener('resize', this._onWindowResize, false);
@@ -59,7 +80,7 @@ class App extends React.Component<IAppProps, IAppState> {
     }
 
     public render() {
-        const { width, height, wasFirstStep } = this.state;
+        const { width, height, wasFirstStep, cardBought, showModal } = this.state;
         const { step, preview, players, effect, attack, modal } = this.props;
         return (
             <React.Fragment>
@@ -87,7 +108,7 @@ class App extends React.Component<IAppProps, IAppState> {
                                         ) : <Container />
                                     }
                                     {
-                                        wasFirstStep === false && (
+                                        wasFirstStep === false && cardBought && (
                                             <React.Fragment>
                                                 <Sprite
                                                     texture={PIXI.Texture.WHITE}
@@ -101,12 +122,27 @@ class App extends React.Component<IAppProps, IAppState> {
                                         )
                                     }
                                     <PlayButton owner={step} doFirstStep={this._doFirstStep} />
+                                    {
+                                        !cardBought && (
+                                            <React.Fragment>
+                                                <Sprite
+                                                    texture={PIXI.Texture.WHITE}
+                                                    tint={0x000000}
+                                                    alpha={0.9}
+                                                    width={Math.pow(width, 2)}
+                                                    height={Math.pow(height, 2)}
+                                                />
+                                                <BuyButton buyCards={this._buyCards}/>
+                                            </React.Fragment>
+                                        )
+                                    }
                                 </Sprite>
                             )
                         }
                     </PIXIProvider>
                 </Stage>
                 {modal && <Modal modal={modal}/>}
+                {showModal && <BuyModal onBuy={this._cardsBought}/>}
             </React.Fragment>
         );
     }
