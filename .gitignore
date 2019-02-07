@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /.idea
+0x_ganache_snapshot
 
 # testing
 /coverage

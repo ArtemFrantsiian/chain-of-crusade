@@ -41,6 +41,11 @@ const initialState: IPlayers = {
         activity: 1,
         health: 20,
         pocket: [
+            taote,
+            necessarySacrifice,
+            weakness,
+            ronin,
+            herbalRemedies,
             yamabusi,
             mistress,
             boomSound,
@@ -57,13 +62,7 @@ const initialState: IPlayers = {
             { ...yerisiarh, id: 18 },
             { ...yerisiarh, id: 19 },
         ],
-        arm: [
-            taote,
-            necessarySacrifice,
-            weakness,
-            ronin,
-            herbalRemedies,
-        ],
+        arm: [],
         hangUp: [],
         table: []
     },
@@ -110,6 +109,14 @@ const initialState: IPlayers = {
 const nonCanTurnCards = (state = initialState) => {
     for (const card of state[EOwner.I].table) {
         card.canTurn = false;
+    }
+}
+
+const addCardsOnBuy = (state = initialState) => {
+    state[EOwner.I].arm = state[EOwner.I].pocket.slice(0, 5);
+    state[EOwner.I].pocket = state[EOwner.I].pocket.slice(5);
+    return {
+        ...state
     }
 }
 
@@ -525,6 +532,7 @@ const handleStepFourtyFour = (state = initialState) => {
 };
 
 const handlers = {
+    [types.ADD_CARDS]: addCardsOnBuy,
     [types.STEP_ONE]: handleStepOne,
     [types.STEP_TWO]: handleStepTwo,
     [types.STEP_THREE]: handleStepThree,

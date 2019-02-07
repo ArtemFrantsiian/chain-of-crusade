@@ -1,6 +1,9 @@
 export const TOOGLE_STEP = 'TOOGLE_STEP';
 export type TOOGLE_STEP = typeof TOOGLE_STEP;
 
+export const ADD_CARDS = 'ADD_CARDS';
+export type ADD_CARDS = typeof ADD_CARDS;
+
 export const PREVIEW_CARD = 'PREVIEW_CARD';
 export type PREVIEW_CARD = typeof PREVIEW_CARD;
 

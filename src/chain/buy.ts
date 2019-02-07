@@ -125,7 +125,7 @@ export async function buyCard(cardErc721Id: BigNumber): Promise<void> {
         const newOwner = await contractWrappers.erc721Token.getOwnerOfAsync(dummyERC721TokenContract.address, cardErc721Id);
         console.log("new owner", newOwner);
     } catch (e) {
-        throw new Error(e);
+        throw new Error(e.message);
     }
 }
 
