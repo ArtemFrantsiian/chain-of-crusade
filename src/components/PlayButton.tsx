@@ -178,7 +178,7 @@ class PlayButton extends React.Component<IPlayButtonProps, IPlayButtonState> {
                     this.makeSteps([
                         stepTwo,
                         () => addEffect({
-                            name: "Звук Горна"
+                            name: "Sound of horn"
                         }),
                         stepThree,
                         stepFour,
@@ -203,7 +203,7 @@ class PlayButton extends React.Component<IPlayButtonProps, IPlayButtonState> {
                     stepSeven();
                     this.makeSteps([
                         () => addEffect({
-                            name: "Травяной сбор"
+                            name: "Herbal"
                         }),
                         stepEight,
                         () => attack({ x: 1190, y: 1007 }),
@@ -233,7 +233,7 @@ class PlayButton extends React.Component<IPlayButtonProps, IPlayButtonState> {
                         stepThirteen,
                         stepFourteen,
                         () => addEffect({
-                            name: "Гнев небес"
+                            name: "Wrath of heaven"
                         }),
                         () => attack({ x: 1300, y: 770 }),
                         stepFifteen,
@@ -265,7 +265,7 @@ class PlayButton extends React.Component<IPlayButtonProps, IPlayButtonState> {
                     stepNineteen();
                     this.makeSteps([
                         () => addEffect({
-                            name: "Звук горна"
+                            name: "Sound of horn"
                         }),
                         stepTwenty,
                         stepTwentyOne,
@@ -303,7 +303,7 @@ class PlayButton extends React.Component<IPlayButtonProps, IPlayButtonState> {
                         stepFourty,
                     } = this.props;
                     addEffect({
-                        name: "Необходимая жертва"
+                        name: "Required sacrifice"
                     });
                     stepThirty();
                     this.makeSteps([
@@ -318,7 +318,7 @@ class PlayButton extends React.Component<IPlayButtonProps, IPlayButtonState> {
                         stepThirtyFive,
                         stepThirtySix,
                         () => addEffect({
-                            name: "Воскрешение из мертвых"
+                            name: "Resurrection"
                         }),
                         stepThirtySeven,
                         () => attack({ x: 1190, y: 1007 }),
@@ -344,7 +344,7 @@ class PlayButton extends React.Component<IPlayButtonProps, IPlayButtonState> {
                     stepFourtyOne();
                     this.makeSteps([
                         () => addEffect({
-                            name: "Неутомимая"
+                            name: "Unstoppable"
                         }),
                         stepFourtyTwo,
                         () => attack({ x: 1190, y: 227 }),

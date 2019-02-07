@@ -4,12 +4,13 @@ import * as coin from '../assets/icons/coins.png'
 interface IBuyCardTypeProps {
 	onBuy: () => void;
 	price: number;
+	error: string;
 	disabled: boolean;
 }
 
 export class BuyCardType extends React.Component<IBuyCardTypeProps> {
 	public render(): React.ReactNode {
-		const {price , disabled} = this.props;
+		const {price, error, disabled} = this.props;
 		return (
 			<React.Fragment>
 				<div style={{
@@ -28,6 +29,7 @@ export class BuyCardType extends React.Component<IBuyCardTypeProps> {
 						<span>PRICE: {price}</span>
 						<img style={{padding: '0 4px'}} src={coin} alt="coins" />
 					</div>
+					<p style={{color: 'red'}}>{error}</p>
 					<button style={{
 						background: disabled ? 'gray' : 'green',
 						color: '#fff',

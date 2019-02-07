@@ -99,7 +99,11 @@ class App extends React.Component<IAppProps, IAppState> {
                                     }
                                     {
                                         effect ? (
-                                            <Effect name={effect.name} pixiApp={pixiApp} color={effect.color} />
+                                            <Effect height={height}
+                                                    width={width}
+                                                    name={effect.name}
+                                                    pixiApp={pixiApp}
+                                                    color={effect.color} />
                                         ) : <Container />
                                     }
                                     {

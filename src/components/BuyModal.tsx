@@ -9,7 +9,7 @@ import * as spinner from '../assets/icons/spinner.svg'
 const state = [Church, Unavailable, Unavailable, Unavailable];
 
 export interface IBuyModalProps {
-	addCards: () => (dispatch: any) => Promise<void>;
+	addCards: () => (dispatch: any) => Promise<any>;
 	onBuy: () => void;
 }
 
@@ -17,6 +17,7 @@ export interface IBuyModalState {
 	loading: boolean;
 	selected: boolean;
 	selectedPrice: number;
+	error: string;
 }
 
 class BuyModal extends React.Component<IBuyModalProps, IBuyModalState> {
@@ -24,7 +25,8 @@ class BuyModal extends React.Component<IBuyModalProps, IBuyModalState> {
 	public state = {
 		loading: false,
 		selected: false,
-		selectedPrice: 0
+		selectedPrice: 0,
+		error: ''
 	}
 
 	private _onSelect = () => {
@@ -37,12 +39,20 @@ class BuyModal extends React.Component<IBuyModalProps, IBuyModalState> {
 		this.setState({
 			loading: true
 		})
-		await this.props.addCards();
-		this.props.onBuy();
+		try {
+			await this.props.addCards();
+			this.props.onBuy();
+		} catch (e) {
+			this.setState({
+				loading: false,
+				selected: false,
+				error: 'Not enough balance'
+			})
+		}
 	}
 
 	public render(): React.ReactNode {
-		const { loading, selected } = this.state;
+		const { loading, selected, error } = this.state;
 		return (
 			<React.Fragment>
 				<div className="buy-modal" style={{
@@ -76,7 +86,7 @@ class BuyModal extends React.Component<IBuyModalProps, IBuyModalState> {
 								height: '100%'
 							}}/>)
 					}
-					<BuyCardType disabled={!selected} price={selected ? 20 : 0} onBuy={this._payForCurds}/>
+					<BuyCardType error={error} disabled={!selected} price={selected ? 20 : 0} onBuy={this._payForCurds}/>
 				</div>
 			</React.Fragment>
 		)
